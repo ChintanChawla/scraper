@@ -11,15 +11,22 @@ soup=BeautifulSoup(page.content,'html.parser')
 #body=list(html.children)
 #print(soup.find_all(id="first"))
 #print(soup.find_all('p')[0].get_text())
-#starting=soup.find(id="quotesList")
-quote_finder=soup.find(id="qpos_1_3")
+starting=soup.find(id="quotesList")
 
-counter=1
-#while counter<=17:
-#quote_graber=quote_finder[0]
+
+i=5
+while i<=10:
+ Id="qpos_1_"+str(i)
+ quote_finder=starting.find(id=Id)
+ quote_graber=quote_finder.find_all('a')[1].get_text()
+ author=quote_finder.find_all('a')[2].get_text()
+ print(quote_graber + '-'+ author)
+ i+=1
+
 #quote=quote_graber.find(class_="zoomc bqpht").get_text() b-qt qt_389605 oncl_q
 # above line is showing attribute error  
-print(quote_finder.prettify())
+#print(quote_graber.prettify())
+
       
 #counter+=1  
 #print(quote)
