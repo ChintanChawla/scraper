@@ -1,1 +1,1 @@
-This is a basic web scraper.It is made using python.Web scraper basically extract the data from a website.This is scraper is being used  to scarpe motivational quotes from "https://www.brainyquote.com/quotes/topics/topic_motivational.html".
+This is a basic web scraper.It is made using python.Web scraper basically extract the data from a website.This is scraper is being used  to scrap motivational quotes from "https://www.brainyquote.com/quotes/topics/topic_motivational.html".
