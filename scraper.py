@@ -1,6 +1,6 @@
 import requests
 import pandas as pd
-#pd.set_option('display.max_colwidth', -1)
+pd.set_option('display.max_colwidth', -1)
 page=requests.get("https://www.brainyquote.com/quotes/topics/topic_motivational.html")
 page
 page.status_code
@@ -17,16 +17,36 @@ starting=soup.find(id="quotesList")
 
 quote_graber=[]
 author=[]
-i=5
+i=1
+s=0
 
-while i<=10:
- Id="qpos_1_"+str(i)
- quote_finder=starting.find(id=Id)
- quote_graber.append(quote_finder.find_all('a')[1].get_text())
- author.append(quote_finder.find_all('a')[2].get_text())
- #print(quote_graber + '-'+ author)
- #print(author)
- i+=1
+while s<=7:
+ try:
+  Id="qpos_1_"+str(i)
+  quote_finder=starting.find(id=Id)
+  quote_graber.append(quote_finder.find_all('a')[1].get_text())
+  author.append(quote_finder.find_all('a')[2].get_text())
+  #print(quote_graber + '-'+ author)
+  #print(author)
+  i+=1
+  s=0
+ except AttributeError:
+  i+=1
+  s=s+1
+  continue
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 quotes = pd.DataFrame({
